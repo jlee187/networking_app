@@ -5,7 +5,7 @@ class PeopleController < ProtectedController
 
   # GET /people
   def index
-    @people = current_user.books.all
+    @people = current_user.people.all
 
     render json: @people
   end
@@ -17,7 +17,7 @@ class PeopleController < ProtectedController
 
   # POST /people
   def create
-    @person = current_user.books.build(person_params)
+    @person = current_user.people.build(person_params)
 
     if @person.save
       render json: @person, status: :created, location: @person
