@@ -48,6 +48,6 @@ class PeopleController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def person_params
-      params.require(:person).permit(:name, :company, :industry, :connections, :partner, :children, :notes)
+      params.require(:person).permit(:name, :connections, :partner, :children, :notes)
     end
 end
